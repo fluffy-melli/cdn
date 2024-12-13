@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="all">
+        <link href="/static/home/css/font.css?2024-10-05" rel="stylesheet" type="text/css"/>
+        <link href="/static/home/css/style.css?2024-10-05" rel="stylesheet" type="text/css"/>
+        <!-- Meta Tags -->
+        <meta name="color" content="{{.metalink.color}}"/>
+        <meta name="theme-color" content="{{.metalink.color}}"/>
+        <title>{{.metalink.title}}</title>
+        <meta name="title" content="{{.metalink.title}}"/>
+        <meta name="description" content="{{.metalink.description}}"/>
+        <meta name="url" content="{{.metalink.url}}">
+        <meta name="site_name" content="{{.metalink.name}}">
+        <link rel="canonical" href="{{.metalink.url}}">
+        <!-- Open Graph -->
+        <meta property="og:color" content="{{.metalink.color}}"/>
+        <meta property="og:url" content="{{.metalink.url}}"/>
+        <meta property="og:title" content="{{.metalink.title}}"/>
+        <meta property="og:description" content="{{.metalink.description}}"/>
+        <meta property="og:site_name" content="{{.metalink.name}}">
+        {{.metalink.image.OpenGraph}}
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:url" content="{{.metalink.url}}"/>
+        <meta property="twitter:title" content="{{.metalink.title}}"/>
+        <meta property="twitter:description" content="{{.metalink.description}}"/>
+        {{.metalink.image.Twitter}}
+
+        <meta http-equiv="refresh" content="0;{{.metalink.url}}">
+    </head>
+    <body>
+        <p>잠시 후에 <a href="{{.metalink.url}}">여기로 이동</a>합니다.</p>
+    </body>
+</html>

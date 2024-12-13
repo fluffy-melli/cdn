@@ -1,0 +1,31 @@
+{
+    "cache-dir" : "../--cache",
+    "cache-size": {
+        "GB"   : 2,
+        "MB"   : 500,
+        "KB"   : 0,
+        "Byte" : 0
+    },
+    "server": {
+        "cors": {
+            "use": true,
+            "config": {
+                "AllowCredentials": true,
+                "AllowOrigins": [
+                    "*"
+                ],
+                "AllowMethods": [
+                    "GET", "POST", "PUT", "DELETE", "OPTIONS"
+                ],
+                "AllowHeaders": [
+                    "Origin", "Content-Type", "Authorization"
+                ],
+                "ExposeHeaders": [
+                    "Content-Length"
+                ]
+            }
+        },
+        "MaxFileSize-MB": 100,
+        "port": 2095
+    }
+}

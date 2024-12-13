@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <title>파일 업로드</title>
+    </head>
+    <body>
+        <h1>파일 업로드</h1>
+        <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/file/upload">
+            <label for="file">파일 선택:</label>
+            <input type="file" id="file" name="file" required>
+            <br><br>
+            <button type="submit">업로드</button>
+        </form>
+
+        <div id="response"></div>
+
+        <script>
+            document.getElementById('uploadForm').onsubmit = async function(event) {
+                event.preventDefault()
+                const formData = new FormData(this)
+                const responseDiv = document.getElementById('response')
+                try {
+                    const response = await fetch('/file/upload', {
+                        method: 'POST',
+                        body: formData,
+                    })
+                    const result = await response.json()
+                    if (response.ok) {
+                        responseDiv.innerHTML = `<p style="color: green">${result.message} (파일명: ${result.filename})</p>`
+                    } else {
+                        responseDiv.innerHTML = `<p style="color: red">${result.error}</p>`
+                    }
+                } catch (error) {
+                    responseDiv.innerHTML = `<p style="color: red">오류 발생: ${error.message}</p>`
+                }
+            }
+        </script>
+    </body>
+</html>
