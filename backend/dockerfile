@@ -12,6 +12,7 @@ FROM alpine:latest
 
 WORKDIR /root/
 
+RUN mkdir -- --cache
 COPY --from=builder /app/cdn .
 COPY --from=builder /app/cdn.config.json ./cdn.config.json
 

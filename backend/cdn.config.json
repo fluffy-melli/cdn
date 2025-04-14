@@ -1,5 +1,5 @@
 {
-    "cache-dir" : "../--cache",
+    "cache-dir" : "./--cache",
     "cache-size": {
         "GB"   : 2,
         "MB"   : 500,
