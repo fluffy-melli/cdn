@@ -1,0 +1,20 @@
+FROM golang:1.23.5-alpine AS builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN go mod download
+
+RUN go build -o cdn .
+
+FROM alpine:latest
+
+WORKDIR /root/
+
+COPY --from=builder /app/cdn .
+COPY --from=builder /app/cdn.config.json ./cdn.config.json
+
+EXPOSE 2095
+
+CMD ["./cdn"]
